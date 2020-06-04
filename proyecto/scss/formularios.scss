@@ -1,0 +1,74 @@
+//// @access public
+//// @author David Gonzalez
+
+/// Estilos generales para formularios
+/// @group formularios
+form {
+    width: $form-width;
+    padding: 1rem;
+
+}
+
+
+/// Estilos para los diferentes tipos de campo del formulario
+/// @group formularios
+input, select,  textarea , button {
+    display: block;
+    width: $form-width;
+    margin-bottom: 1rem;
+}
+
+
+/// Estilos para las etiquetas
+/// @group formularios
+label {
+    display: block;
+    font-size: 1.2rem;
+}
+
+
+/// Estilos para el fieldset
+/// @group formularios
+fieldset {
+    border: 0px;
+    padding: 0px;
+}
+
+
+/// Mapa con los nombres y el color asociado
+/// @group formularios
+$btn-colors: (
+  "error": $color-error,
+  "warning": $color-warning,
+  "accepted": $color-accepted,
+  "normal": $color-normal
+);
+
+/// Botón general
+/// @group formularios
+.btn {
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+  border-radius: $form-border-radius !important;
+  padding: 0.5rem;
+
+  &:hover {
+    box-shadow: $form-border-radius/2 $form-border-radius/2 $color-shadow !important;    
+  }
+
+  &:active {    
+    color: white !important;
+    
+  }
+}
+
+/// Para dar color
+/// @group formularios
+@each $k, $v in $btn-colors {
+  .btn-#{$k} {
+    background-color: $v;
+    color: rgb(77, 73, 73);
+    font-weight: bolder;
+  }
+}

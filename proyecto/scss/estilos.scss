@@ -1,0 +1,31 @@
+//// @access public
+//// @author David Gonzalez
+
+
+/// Importante para que me cuente los bordes de las cajas
+* {
+    box-sizing: border-box;
+}
+
+/// Algunos estilos básicos para el body
+body {
+    color: $text-color;
+    font-family: $base-font-family;
+    margin: 0px;
+    @include gradient-y(
+    $background-color-fondo-inicio,
+    $background-color-fondo-final
+  );
+    
+}
+
+/// Reglas para los títulos
+@for $i from 1 through 6  {
+    h#{$i} {
+        font-family: $header-font-family;
+        color: rgb(56, 56, 233);
+        @include centrar;
+    }
+}
+
+

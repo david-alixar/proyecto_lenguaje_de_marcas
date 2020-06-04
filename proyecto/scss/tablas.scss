@@ -1,0 +1,50 @@
+//// @access public
+//// @author David Gonzalez
+
+/// Definimos los estilos generales para las tablas
+/// @group tablas
+table {
+    border-collapse: collapse;
+    width: 100%;
+    padding: 1rem;
+    display: block;
+    overflow-x: auto;
+}
+
+/// Estilos para los títulos de las tablas
+/// @group tablas
+thead {
+    tr {
+        background-color: $table-header-background-color;
+        color: $table-header-color;
+        font-size: 1.5rem;
+    }
+
+}
+
+/// Estilos para las tablas
+/// @group tablas
+tbody {
+
+    tr {
+        border-bottom: $table-row-bottom-border-width solid $table-border-color;
+    }
+
+    tr:nth-child(even) {
+        background-color: $table-even-rows-background-color;
+    }
+
+    tr:nth-child(odd) {
+        background-color: $table-odd-rows-background-color;
+    }
+
+    tr:hover {
+        background-color: $table-hover-background-color;
+    }
+
+    td {
+        font-size: $table-body-font-size;
+        padding: 0.5rem;
+    }
+
+}

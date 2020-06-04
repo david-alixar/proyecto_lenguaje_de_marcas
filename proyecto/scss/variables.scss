@@ -1,0 +1,137 @@
+//// @access public
+//// @author David Gonzalez
+
+/// Variables
+/// @group variables
+
+/// Tipo de letra general
+/// @group letras 
+@import url('https://fonts.googleapis.com/css?family=Bowlby+One+SC|Lato&display=swap');
+$base-font-family: 'Lato', 'san-serif';
+
+
+/// Tipo de letra para los títulos
+/// @group letras
+$header-font-family: 'Bowlby One SC', cursive;
+
+
+/// Color del texto
+/// @group color
+$text-color: rgb(21, 26, 21);
+
+/// Background color inicio 
+/// @group color
+$background-color-fondo-inicio: rgb(1, 32, 1);
+
+/// Background color fin 
+/// @group color
+$background-color-fondo-final: rgb(184, 206, 184);
+
+
+
+/// Padding para la separación entre las distintas columnas
+/// @group diseño
+$pad: 1rem;
+
+/// Anchura del contenedor principal
+/// @group diseño
+$max-container-width: 95%;
+
+/// Color de fondo en los títulos de las tablas
+/// @group tablas
+$table-header-background-color:  rgb(49, 73, 92);
+
+/// Color del texto en los títulos de las tablas
+/// @group tablas
+$table-header-color: rgb(189, 243, 236);
+
+/// Color de fondo filas impares
+/// @group tablas
+$table-even-rows-background-color:  rgb(179, 201, 218);
+
+/// Color de fondo filas pares:
+/// @group tablas
+$table-odd-rows-background-color: rgb(194, 220, 238);
+
+/// Color de fondo filas al pasar el ratón
+/// @group tablas
+$table-hover-background-color: rgb(111, 156, 170);
+
+
+/// Anchura del borde inferior de las filas
+/// @group tablas
+$table-row-bottom-border-width: 0.2rem;
+
+
+/// Color de fondo de la tabla 
+/// @group tablas
+$table-border-color: $text-color;
+
+/// Tamaño de letra en el cuerpo de las tablas
+/// @group tablas
+$table-body-font-size: 0.8rem;
+
+/// Icono listas
+/// @group listas
+$list-icon-fontawesome: "<i class='fa fa-caret-right'></i>";
+
+/// Separación entre los elementos de las listas "iconizadas" y el border
+/// @group listas
+$list-padding: 1rem;
+
+
+/// Border radius imágenes
+/// @group imágenes
+$img-border-radius: 0.5rem;
+$figure-border-radius: $img-border-radius;
+
+/// Border radius menú
+/// @group menú
+$menu-border-radius: 0.7rem;
+
+/// Anchura de los formularios dentro del contenedor
+/// @group formularios
+$form-width: 100%;
+
+/// Radio para el redondeado de los elementos de los formularios
+/// @group formularios
+$form-elements-radius: 0.3rem;
+
+/// Color botón error
+/// @group formularios
+$color-error: #ff0000;
+
+/// Color botón warning
+/// @group formularios
+$color-warning: rgb(239, 241, 87);
+
+/// Color botón aceptación
+/// @group formularios
+$color-accepted: rgb(111, 156, 170);
+
+/// Color botón normal
+/// @group formularios
+$color-normal: rgb(0, 110, 255);
+
+/// Color sombra botón al pasar el ratón
+/// @group formularios
+$color-shadow: rgb(138, 122, 122);
+
+
+/// Redondeo en bordes para los elementos del formulario
+/// @group formularios
+$form-border-radius: 0.2rem;
+
+
+/// Color de Inicio para el degradado del menú
+/// @group menú
+$navbar-background-color-inicio: rgb(196, 119, 5);
+
+/// Color final para el degradado del menú
+/// @group menú
+$navbar-background-color-final: lighten($text-color,28%);
+
+/// Color de texto cuando pasamos el ratón por los elementos del menú
+/// @group menú
+$navbar-color-hover: #FFF;
+

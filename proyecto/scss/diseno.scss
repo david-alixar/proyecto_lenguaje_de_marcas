@@ -1,0 +1,52 @@
+//// @access public
+//// @author David Gonzalez
+
+//Tamaño y borde de las row
+.row {
+  @include flex_mixin;
+}
+
+/// Número de elementos máximos de ancho
+/// @group diseño
+$num_elementos: 8;
+
+/// Mapa tamaño de pantalla
+/// @group diseño
+$breakpoints: (
+  "sm": 576px,
+  "md": 768px,
+  "lg": 992px
+);
+
+/// Generar columnas responsivas
+/// @group diseño
+@for $i from 1 through $num_elementos {
+  .row > .col-#{$i} {
+    flex: 0 0 #{anchura_col($i)}+ "%";
+    max-width: #{anchura_col($i)}+ "%";
+  }
+}
+
+@each $k, $v in $breakpoints {
+  @media (min-width: #{$v}) {
+    /// Bucle para generar las clases de las columnas responsivas
+    /// @group diseño
+    @for $i from 1 through $num_elementos {
+      .row > .col-#{$k+"-"+$i} {
+        flex: 0 0 #{anchura_col($i)}+ "%";
+        max-width: #{anchura_col($i)}+ "%";
+      }
+    }
+  }
+}
+
+
+
+.row > * {
+  padding: $pad;
+}
+
+.container {
+  max-width: $max-container-width;
+  @include centrado();
+}

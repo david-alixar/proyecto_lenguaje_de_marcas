@@ -1,0 +1,25 @@
+//// @access public
+//// @author David Gonzalez
+
+
+/// Función para determinar el color de fondo de las columnas distinguiendo si es par o no
+/// @parameter {integer} $col-number Número de la columna
+/// @return {color}
+/// @group tablas
+@function colum-color($col-number) {
+    @if ($col-number%2 == 0) {
+      @return $color-col-pares;
+    } @else {
+      @return $color-col-impares;
+    }
+  }
+
+
+
+/// Función para determinar la anchura del elemento
+/// @parameter {integer} $i - Número de casillas del alcho de la fila que va a ocupar
+/// @return {integer} - El porcentaje del ancho correspondiente al elemento
+/// @group diseño
+@function anchura_col($i) {
+    @return (100 / $num_elementos)*$i ;
+  }

@@ -1,0 +1,23 @@
+//// @access public
+//// @author David Gonzalez
+
+/// Estilos generales para las listas
+/// @group listas
+
+ul.iconized {
+    list-style-type: none;
+    margin: 0px;
+
+    li {
+        padding: $list-padding;
+        list-style-type: none;
+
+      &::before {
+        font-family: 'FontAwesome';
+        content: "\f1b0"
+      } 
+       
+        
+    }
+}
+
