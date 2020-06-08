@@ -1,0 +1,36 @@
+div.toast{
+  visibility: hidden; 
+  min-width: 250px; 
+  margin-left: -125px;
+  left: 40%; 
+  bottom: 50px;  
+  @include color-fondo($fondo-toast);
+  @include cambiar_color($color-x-toast);
+  @include centrar;
+  @include border-radius(2);
+  @include padding(1.5);
+  @include posicion(fixed);
+}
+
+#icono_i {
+    @include texto(4);
+    @include cambiar_color($color-icono);
+    @include centrar;
+}
+
+div.toast.show {
+    visibility: visible;
+    -webkit-animation: fadein 0.5s;
+    animation: fadein 0.5s;
+}
+
+@keyframes fadein {
+    from {
+        bottom: 0;
+        opacity: 0;
+    }
+    to {
+        bottom: 30px;
+        opacity: 1;
+    }
+}

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
   <meta charset="UTF-8" />
@@ -9,15 +9,16 @@
   <!--build:css css/styles.min.css-->
   <link rel="stylesheet" href="dist/css/styles.min.css" />
   <!--/build-->
+  <script src="js/toast.js"></script>
 </head>
 
 <body>
   <div class="container">
     <h1> AVENTURA ANIMAL</h1>
     <h2> Descubre la fauna más salvaje</h2>
-    
+
     <div class="row">
-      <nav class="col-2 col-md-1">
+      <nav class="col-1">
         <ul>
           <li class="active">Inicio</li>
           <li>Animales
@@ -55,34 +56,42 @@
               <li>Sobre nosotros</li>
             </ul>
           </li>
-  
+
           <li>Contacta</li>
         </ul>
       </nav>
-      <div class="row col-6 col-md-7">
-        <div class="col-8 col-md-4 col-lg-2"><img src="./img/c1.jpg"></div>
-        <div class="col-8 col-md-4 col-lg-2"><img src="./img/c2.jpg"></div>
-        <div class="col-8 col-md-4 col-lg-2"><img src="./img/c3.jpg"></div>
-        <div class="col-8 col-md-4 col-lg-2"><img src="./img/c4.jpg"></div>
-        <div class="col-8 col-md-4 col-lg-2"><img src="./img/c5.jpg"></div>
-        <div class="col-8 col-md-4 col-lg-2"><img src="./img/c6.jpg"></div>
-        <div class="col-8 col-md-4 col-lg-2"><img src="./img/c7.jpg"></div>
-        <div class="col-8 col-md-4 col-lg-2"><img src="./img/c8.jpg"></div>
+      <div class="row col-6">
+        <div class="col-8 col-md-4 col-lg-2"><img src="./img/img1.jpg"></div>
+        <div class="col-8 col-md-4 col-lg-2"><img src="./img/img2.jpg"></div>
+        <div class="col-8 col-md-4 col-lg-2"><img src="./img/img3.jpg"></div>
+        <div class="col-8 col-md-4 col-lg-2"><img src="./img/img4.jpg"></div>
+        <div class="col-8 col-md-4 col-lg-2"><img src="./img/img5.jpg"></div>
+        <div class="col-8 col-md-4 col-lg-2"><img src="./img/img6.jpg"></div>
+        <div class="col-8 col-md-4 col-lg-2"><img src="./img/img7.jpg"></div>
+        <div class="col-8 col-md-4 col-lg-2"><img src="./img/img8.jpg"></div>
       </div>
-      <div class="col-8"> <h4> Hacemos safaris a diferentes países. Consúltenos! <br> Grupos, excursiones, familias, etc.</h4></div>
+      <div class="row col-8">
+        <div class="col-2" id="icono_i"> <i onclick="mostrar()" class="fa fa-info-circle"></i></div>
+        <div class="col-6 toast" id="toast">
+          <h4> Hacemos safaris a diferentes países. Consúltanos! <br> Grupos, excursiones, familias, etc. </h4> <i
+            onclick="cerrar()" class="fa fa-window-close white" aria-hidden="true"></i>
+        </div>
+        <div class="col-8 col-md-6">
+          <p> Nuestros selectos safaris ofrecen vistas privilegiadas, orientaciones expertas y la oportunidad de pasear de manera verídica entre los más prestigiosos elefantes, tigres, leones, rinocerontes, cebras, osos panda, y muchos más...</p></div>
+      </div>
       <div class="col-8 col-md-3">
         <form>
           <fieldset>
-            <label>Email</label>
-            <input type="email" />
             <label>Nombre</label>
             <input type="name" />
+            <label>Email</label>
+            <input type="email" />
             <label>Teléfono de contacto</label>
             <input type="phone" />
             <label>Otros</label>
             <input type="other" />
           </fieldset>
-          <span class="btn btn-accepted left">Enviar</span>
+          <span class="btn btn-accepted">Enviar</span>
         </form>
       </div>
       <div class="col-8 col-md-5">

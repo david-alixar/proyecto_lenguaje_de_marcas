@@ -7,24 +7,24 @@
     box-sizing: border-box;
 }
 
-/// Algunos estilos básicos para el body
+/// Estilos para el body
 body {
-    color: $text-color;
-    font-family: $base-font-family;
-    margin: 0px;
-    @include gradient-y(
-    $background-color-fondo-inicio,
-    $background-color-fondo-final
-  );
-    
+    @include margen(0);
+    @include tipo_letra($estilo-letra); /// NO SE ESTÁ USANDO
+    @include cambiar_color($color-texto); /// NO SE ESTÁ USANDO
+    @include texto-responsivo(2); 
+    @include degradado( /// efecto degradado de color en el fondo
+    $color-fondo-inicio, /// el color por el que empieza el degradado
+    $color-fondo-final /// el color por el que termina el degradado
+    );
 }
 
-/// Reglas para los títulos
+/// Estilos para los títulos
 @for $i from 1 through 6  {
     h#{$i} {
-        font-family: $header-font-family;
-        color: rgb(56, 56, 233);
-        @include centrar;
+        @include tipo_letra($letra-titulos); /// la tipografía
+        @include cambiar_color($color-titulos); /// el color de la letra
+        @include centrar; /// para centrar el título
     }
 }
 

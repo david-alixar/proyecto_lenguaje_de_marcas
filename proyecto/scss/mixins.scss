@@ -1,71 +1,202 @@
 //// @access public
 //// @author David Gonzalez
 
-/// Crear degradado de izquierda a derecha
+
+/// Mixins creados para la mayoría de los estilos y comportamientos
 /// @group mixins
-/// @parameter {color} $color-inicio -- Color inicial 
-/// @parameter {color} $color-final -- Color final 
-/// @parameter {float} $inicio -- Porcentaje de la anchura donde empieza el cambio
-/// @parameter {float} $final -- Porcentaje de la anchura donde empieza el cambio
-@mixin gradient-x($color-inicio, $color-final,$inicio : 0% ,$final : 80%) {
-    background-image: linear-gradient(right,$color-inicio $inicio,$color-final $final);
-}
+
+
 
 /// Crear un degradado de arriba a abajo
 /// @group mixins
-/// @parameter {color} $color-inicio -- Color inicial para el gradiente
-/// @parameter {color} $color-final -- Color final para el gradiente
-/// @parameter {float} $inicio -- Porcentaje de la altura donde empieza el cambio
-/// @parameter {float} $final -- Porcentaje de la altura donde empieza el cambio
-@mixin gradient-y($color-inicio, $color-final,$inicio : 0% ,$final : 80%) {
+/// @parameter {color} $color-inicio --> Color inicial para el gradiente
+/// @parameter {color} $color-final --> Color final para el gradiente
+/// @parameter {float} $inicio --> Porcentaje de la altura donde empieza el cambio
+/// @parameter {float} $final --> Porcentaje de la altura donde empieza el cambio
+@mixin degradado($color-inicio, $color-final,$inicio : 0% ,$final : 80%) {
     background-image: linear-gradient(to bottom,$color-inicio $inicio,$color-final $final);
 }
 
+/// Estilos para el fieldset de los formularios
+/// @group formularios
+/// @parameter {integer} $borde --> Factor para ajustar el borde
+/// @parameter {integer} $pad --> Factor para ajustar el padding 
+@mixin fieldset ($borde, $pad) {
+    border: #{$borde+"px"};
+    padding: #{$pad+"px"};
+}
+
+
+/// Estilos para el color de la fuente
+/// @group color
+/// @parameter {color} $color --> Color para sustituir
+@mixin cambiar_color ($color) {
+    color: $color;
+}
+
+/// Color de fondo 
+/// @group color
+/// @parameter {color} $color ---> color del fondo
+@mixin color-fondo($color) {
+    background-color: $color;
+}
+
+
 /// Estilos al elemento principal y la fila de la maquetación
-/// @group diseño
+/// @group mixins
 @mixin flex_mixin {
-    display: -webkit-box; /* OLD - iOS 6-, Safari 3.1-6, BB7 */
-    display: -ms-flexbox; /* TWEENER - IE 10 */
-    display: -webkit-flex; /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-  }
-
-
-  /// Escalar elemento
-  /// @group mixins
-  /// @parameter {float} $factor -- Factor para escalar el elemento
-  @mixin escalar($factor) {
-    transform: scale($factor,$factor);
-  }
-
-  /// Establecer la duración de las transformaciones que afectan a un elemento
-  /// @group mixins
-  /// @parameter {float} $duration -- Duración de la animación
-@mixin setDuration($duration) {
-    transition-duration: #{$duration+"s"};
 }
 
-  /// Posicionar elemento en el centro de la página
-  /// @group mixins
-  @mixin centrado() {
-        margin: 0 auto;
+/// Justa la anchura con un ancho que le demos (en %)
+/// @group mixins
+/// @parameter {integer} $ancho --> Factor para ajustar el ancho 
+@mixin anchura($ancho) {
+    width: #{$ancho+"%"};
+}
+
+/// Justa la altura con una altura que le demos (en px)
+/// @group mixins
+/// @parameter {integer} $altura --> Factor para ajustar el ancho 
+@mixin altura($altura) {
+    height: #{$altura+"px"};
+}
+
+/// Escalar elemento
+/// @group mixins
+/// @parameter {float} $factor --> Factor para escalar el elemento
+@mixin escalar($factor) {
+    transform: scale($factor,$factor);
+}
+
+/// Establece la duración de las transformaciones que afectan a un elemento
+/// @group mixins
+/// @parameter {float} $dur --> Duración de la animación
+@mixin duracion($dur) {
+    transition-duration: #{$dur+"s"};
+}
+
+
+/// Centra contenido
+/// @group mixins
+@mixin centrar() {
+    text-align: center;
+}
+
+/// Posiciona elemento en el centro de la página
+/// @group mixins
+@mixin centrado() {
+    margin: 0 auto;
+}
+
+
+
+/// Determina cómo están los elementos
+/// @group mixins
+/// @parameter {posicion} $pos ---> indica el lugar donde se encuentra el elemento
+@mixin posicion($pos) {
+    position: $pos;
+}
+
+/// Ubica los elementos
+/// @group mixins
+/// @parameter {display} $disp ---> indica cómo se van a comportar los elementos
+@mixin display($disp) {
+    display: $disp;
+}
+
+
+
+/// Estilos para cambiar el tipo de fuente
+/// @group letra
+/// @parameter {letra} $letra --> Letra para sustituir
+@mixin tipo_letra ($letra) {
+    font-family: $letra;
+}
+
+/// Gestiona los estilos al texto (decoración)
+/// @group letra
+/// @parameter {text} $text ---> indica la decoración elegida
+@mixin text-decoration($text) {
+    text-decoration: $text;
+}
+
+/// Hace que el texto sea responsivo cambiando de tamaño la letra
+/// @group letra
+/// @parameter {float} $tam ---> tamaño de la letra en vw
+@mixin texto-responsivo($tam) {
+    font-size: #{$tam+"vw"}
+}
+
+/// Determina el tamaño del texto
+/// @group letra
+/// @parameter {float} $tam ---> tamaño de la letra en rem
+@mixin texto($tam) {
+    font-size: #{$tam+"rem"}
+}
+
+/// Da el grosor de las letras
+/// @group letra
+/// @parameter {float} $gros 
+@mixin grosor-letra($gros) {
+    font-weight: $gros;
+}
+
+
+
+/// Da un margen general
+/// @group margen
+/// @parameter {float} $marg ---> cantidad de margen (en píxeles)
+@mixin margen($marg){
+    margin: #{$marg+"px"}
+}
+
+/// Da un padding general
+/// @group padding
+/// @parameter {float} $padd ---> cantidad de padding (en rem)
+@mixin padding($padd){
+    padding: #{$padd+"rem"}
+}
+
+/// Da un padding a la izquierda
+/// @group padding
+/// @parameter {float} $pad ---> cantidad de padding
+/// @parameter {medida} $medida ---> determina la unidad de medida usada (rem, px, %, etc.)
+@mixin padding-izq($pad,$medida){
+    padding-left: #{$pad+$medida}
+}
+
+/// Da un padding a la derecha
+/// @group padding
+/// @parameter {float} $pad ---> cantidad de padding
+/// @parameter {medida} $medida ---> determina la unidad de medida usada (rem, px, %, etc.)
+@mixin padding-der($pad, $medida){
+    padding-right: #{$pad+$medida}
+}
+
+
+
+/// Añade un borde redondeado
+/// @group bordes
+/// @parameter {float} $borde ---> radio del redondeo
+@mixin border-radius($borde) {
+    border-radius: $borde;
+}
+
+/// Añade un borde determinado de un color y con una anchura 
+/// @group bordes
+/// @parameter {float} $anchura ---> anchura en píxeles del borde a añadir
+/// @parameter {color} $color ---> color del borde a añadir
+@mixin borde($anchura,$color) {
+    border: #{$anchura+"px"} solid #{$color};
   }
 
-  /// Centrar contenido
-  /// @group mixins
-  @mixin centrar() {
-      text-align: center;
-  }
 
-  /// Añadir un borde determinado de un color y con una anchura 
-  /// @group mixins
-  /// @parameter {integer} $anchura -- Anchura en píxeles del borde a añadir
-  /// @parameter {color} $color -- Color del borde a añadir
-  @mixin addBorder($anchura,$color) {
-      border: #{$anchura+"px"} solid #{$color};
-  }
 
-  
-
+/// Elimina los estilos de las listas
+/// @group listas
+@mixin eliminar-estilos-listas() {
+    list-style-type: none;
+}

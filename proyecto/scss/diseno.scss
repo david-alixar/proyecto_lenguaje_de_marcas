@@ -6,9 +6,6 @@
   @include flex_mixin;
 }
 
-/// Número de elementos máximos de ancho
-/// @group diseño
-$num_elementos: 8;
 
 /// Mapa tamaño de pantalla
 /// @group diseño
@@ -43,7 +40,7 @@ $breakpoints: (
 
 
 .row > * {
-  padding: $pad;
+  @include padding(1);
 }
 
 .container {

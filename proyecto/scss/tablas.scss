@@ -4,10 +4,10 @@
 /// Definimos los estilos generales para las tablas
 /// @group tablas
 table {
+    @include anchura(100);
+    @include padding(1);
     border-collapse: collapse;
-    width: 100%;
-    padding: 1rem;
-    display: block;
+    @include display(block);
     overflow-x: auto;
 }
 
@@ -15,36 +15,35 @@ table {
 /// @group tablas
 thead {
     tr {
-        background-color: $table-header-background-color;
-        color: $table-header-color;
-        font-size: 1.5rem;
+        @include color-fondo($fondo-cabecera-tabla);
+        @include cambiar_color($color-cabecera-tabla);
+        @include texto(1.5);
     }
-
 }
 
 /// Estilos para las tablas
 /// @group tablas
 tbody {
-
     tr {
-        border-bottom: $table-row-bottom-border-width solid $table-border-color;
+        border-bottom: 2px dotted $color-borde-tabla;
     }
 
     tr:nth-child(even) {
-        background-color: $table-even-rows-background-color;
+        @include color-fondo($fondo-filas-pares-tabla);
     }
 
     tr:nth-child(odd) {
-        background-color: $table-odd-rows-background-color;
+        @include color-fondo($fondo-filas-impares-tabla);
     }
 
     tr:hover {
-        background-color: $table-hover-background-color;
+        @include color-fondo($fondo-hover-tabla);
+        @include duracion(1);
+        @include escalar(1.25);
     }
 
     td {
-        font-size: $table-body-font-size;
-        padding: 0.5rem;
+        @include padding(0.5);
+        @include texto($tamano-texto-tablas);
     }
-
 }

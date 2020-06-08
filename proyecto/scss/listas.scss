@@ -5,15 +5,15 @@
 /// @group listas
 
 ul.iconized {
-    list-style-type: none;
-    margin: 0px;
+    @include margen(0);
+    @include eliminar-estilos-listas;
 
     li {
-        padding: $list-padding;
-        list-style-type: none;
+        @include eliminar-estilos-listas;
+        @include padding(0.5);
 
       &::before {
-        font-family: 'FontAwesome';
+        @include tipo_letra($tipo-letra-listas);
         content: "\f1b0"
       } 
        

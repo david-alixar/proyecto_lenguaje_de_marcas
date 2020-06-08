@@ -4,39 +4,35 @@
 /// Estilos generales para las imágenes
 /// @group imágenes
 img {
-    width: 100%;
-    border-radius: $img-border-radius;
+    @include anchura(100);
+    @include border-radius($border-radius-imagenes);
+    @include borde(2,$color-borde-imagenes);
+  
 }
 
 figure.card {
-    @include addBorder(1,$text-color);
-    border-radius: $img-border-radius;
-    display: inline-block;
-    padding: 1rem;
+    @include borde(1,$color-texto);
+    @include border-radius($border-radius-imagenes);
+    @include display(inline-block);
+    @include padding(1);
     margin-block-start: 0;
     margin-block-end: 0;
     margin-inline-start: 0;
     margin-inline-end: 0;
 
-
      img {
-        border-radius: $img-border-radius; 
-        width: 100%;
-
-        &:hover {
-            @include setDuration(3);            
-        }
+        @include border-radius($border-radius-imagenes);
+        @include anchura(100);
      }
 
      figcaption {
-         font-size: 0.8rem;
-         margin: 0.5rem;
-         text-align: center;
+         @include margen(0.5);
+         @include texto(0.9);
+         @include centrado;
      }
-
 }
 
 img:hover {
-    @include setDuration(1);
+    @include duracion(1);
     @include escalar(1.5);
 }

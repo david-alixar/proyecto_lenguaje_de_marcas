@@ -7,31 +7,50 @@
 /// Tipo de letra general
 /// @group letras 
 @import url('https://fonts.googleapis.com/css?family=Bowlby+One+SC|Lato&display=swap');
-$base-font-family: 'Lato', 'san-serif';
+$estilo-letra: 'Bowlby One SC';
 
 
-/// Tipo de letra para los títulos
+/// Tipo de letra de los títulos
 /// @group letras
-$header-font-family: 'Bowlby One SC', cursive;
+$letra-titulos: 'Bowlby One SC', cursive;
+
+///Color de letra de los títulos
+/// @group letras
+$color-titulos: rgb(214, 154, 41); 
+
+///color de letra del texto
+/// @group letras
+$color-texto: rgb(75, 32, 2);
+
+/// Color del texto del menú
+$color-texto-menu: brown;
+
+///Tipo de letra de las listas
+/// @group letras
+$tipo-letra-listas: 'FontAwesome';
 
 
-/// Color del texto
+
+
+/// Color del texto de los formularios
 /// @group color
-$text-color: rgb(21, 26, 21);
+$color-texto-formularios: rgb(21, 26, 21);
 
 /// Background color inicio 
 /// @group color
-$background-color-fondo-inicio: rgb(1, 32, 1);
+$color-fondo-inicio: rgb(1, 32, 1);
 
 /// Background color fin 
 /// @group color
-$background-color-fondo-final: rgb(184, 206, 184);
+$color-fondo-final: rgb(184, 206, 184);
 
 
 
-/// Padding para la separación entre las distintas columnas
+/// Número de elementos máximos de ancho
 /// @group diseño
-$pad: 1rem;
+$num_elementos: 8;
+
+
 
 /// Anchura del contenedor principal
 /// @group diseño
@@ -39,59 +58,73 @@ $max-container-width: 95%;
 
 /// Color de fondo en los títulos de las tablas
 /// @group tablas
-$table-header-background-color:  rgb(49, 73, 92);
+$fondo-cabecera-tabla:  rgb(56, 28, 2);
 
 /// Color del texto en los títulos de las tablas
 /// @group tablas
-$table-header-color: rgb(189, 243, 236);
+$color-cabecera-tabla: rgb(243, 230, 189);
 
-/// Color de fondo filas impares
+/// Color de fondo filas pares
 /// @group tablas
-$table-even-rows-background-color:  rgb(179, 201, 218);
+$fondo-filas-pares-tabla:  rgb(247, 223, 192);
 
-/// Color de fondo filas pares:
+/// Color de fondo filas impares:
 /// @group tablas
-$table-odd-rows-background-color: rgb(194, 220, 238);
+$fondo-filas-impares-tabla: rgb(231, 206, 151);
 
 /// Color de fondo filas al pasar el ratón
 /// @group tablas
-$table-hover-background-color: rgb(111, 156, 170);
-
-
-/// Anchura del borde inferior de las filas
-/// @group tablas
-$table-row-bottom-border-width: 0.2rem;
-
+$fondo-hover-tabla: rgb(165, 112, 68);
 
 /// Color de fondo de la tabla 
 /// @group tablas
-$table-border-color: $text-color;
+$color-borde-tabla: red;
 
 /// Tamaño de letra en el cuerpo de las tablas
 /// @group tablas
-$table-body-font-size: 0.8rem;
-
-/// Icono listas
-/// @group listas
-$list-icon-fontawesome: "<i class='fa fa-caret-right'></i>";
-
-/// Separación entre los elementos de las listas "iconizadas" y el border
-/// @group listas
-$list-padding: 1rem;
+$tamano-texto-tablas: 0.8;
 
 
-/// Border radius imágenes
+
+/// Border imágenes
 /// @group imágenes
-$img-border-radius: 0.5rem;
-$figure-border-radius: $img-border-radius;
+$border-radius-imagenes: 0.5rem;
+$figure-border-radius: $border-radius-imagenes;
+$color-borde-imagenes: rgb(253, 248, 238);
+
+
+
 
 /// Border radius menú
 /// @group menú
-$menu-border-radius: 0.7rem;
+$border-radius-menu: 0.7rem;
 
-/// Anchura de los formularios dentro del contenedor
-/// @group formularios
-$form-width: 100%;
+/// Color de Inicio para el degradado del menú
+/// @group menú
+$fondo-color-menu: rgb(187, 97, 14);
+
+/// Color de texto cuando pasamos el ratón por los elementos del menú
+/// @group menú
+$color-hover-menu: #FFF;
+
+
+
+
+/// Color de fondo Toast
+/// @group toast
+$fondo-toast: rgba(51, 51, 51, 0.582);
+
+/// Color de la X Toast
+/// @group toast
+$color-x-toast: #fff;
+
+
+/// Color del icono Toast
+/// @group toast
+$color-icono: rgb(8, 8, 8);
+
+
+
 
 /// Radio para el redondeado de los elementos de los formularios
 /// @group formularios
@@ -107,7 +140,7 @@ $color-warning: rgb(239, 241, 87);
 
 /// Color botón aceptación
 /// @group formularios
-$color-accepted: rgb(111, 156, 170);
+$color-accepted: rgb(240, 139, 6);
 
 /// Color botón normal
 /// @group formularios
@@ -117,21 +150,30 @@ $color-normal: rgb(0, 110, 255);
 /// @group formularios
 $color-shadow: rgb(138, 122, 122);
 
+/// Color texto botones
+/// @group formularios
+$color-texto-botones: rgb(77, 73, 73);
 
 /// Redondeo en bordes para los elementos del formulario
 /// @group formularios
-$form-border-radius: 0.2rem;
+$border-radius-formularios: 0.2rem;
+
+/// Color de fondo de los formularios
+/// @group formularios
+$fondo-formularios: rgba(212, 158, 158, 0.233);
+
+/// Anchura de los formularios
+/// @group formularios
+$anchura-formularios: 100%;
+
+/// Color boton activo
+/// @group formularios
+$boton-formulario-activo: rgba(114, 28, 28, 0.562);
+
+/// Color boton visitado
+/// @group formularios
+$boton-formulario-visitado: rgba(48, 114, 28, 0.562);
 
 
-/// Color de Inicio para el degradado del menú
-/// @group menú
-$navbar-background-color-inicio: rgb(196, 119, 5);
 
-/// Color final para el degradado del menú
-/// @group menú
-$navbar-background-color-final: lighten($text-color,28%);
-
-/// Color de texto cuando pasamos el ratón por los elementos del menú
-/// @group menú
-$navbar-color-hover: #FFF;
 
