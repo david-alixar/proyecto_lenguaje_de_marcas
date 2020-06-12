@@ -3,21 +3,17 @@
 
 /// Estilos generales para las listas
 /// @group listas
-
 ul.iconized {
-    @include margen(0);
+  @include margen(0px);
+  @include eliminar-estilos-listas;
+
+  li {
     @include eliminar-estilos-listas;
+    @include padding(0.5rem);
 
-    li {
-        @include eliminar-estilos-listas;
-        @include padding(0.5);
-
-      &::before {
-        @include tipo_letra($tipo-letra-listas);
-        content: "\f1b0"
-      } 
-       
-        
+    &::before {
+      @include tipo_letra($icono-listas);
+      content: "\f1b0"
     }
+  }
 }
-

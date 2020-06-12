@@ -77,16 +77,17 @@
         <div class="col-8 col-md-6">
           <p> Nuestros selectos safaris ofrecen vistas privilegiadas, orientaciones expertas y la oportunidad de pasear de manera verídica entre los más prestigiosos elefantes, tigres, leones, rinocerontes, cebras, osos panda, y muchos más...</p></div>
       </div>
+      <h4> Solicita información sin compromiso ni registro previo!</h4>
       <div class="col-8 col-md-3">
         <form>
-          <fieldset>
+          <fieldset class="inline">
             <label>Nombre</label>
             <input type="name" />
             <label>Email</label>
             <input type="email" />
             <label>Teléfono de contacto</label>
             <input type="phone" />
-            <label>Otros</label>
+            <label>Safari o destino que te interesa</label>
             <input type="other" />
           </fieldset>
           <span class="btn btn-accepted">Enviar</span>
@@ -163,6 +164,29 @@
             </tbody>
           </table>
         </section>
+      </div>
+      <div>
+        <h4> Regístrate! Es gratis y te informaremos de nuevas ofertas, promociones, destinos, etc.</h4>
+        <form class="form-inline">
+          <div>
+            <label for="email">Usuario(email):</label>
+            <input type="email" id="email" placeholder="email" name="email">
+          </div>  
+          <div>
+            <label for="pwd">Contraseña:</label>
+            <input type="password" id="pwd" placeholder="contraseña" name="pswd">
+          </div>
+          <label>
+            <input type="checkbox" name="acuerdo" required> Acepto el acuerdo de protección de datos 
+            <input type="checkbox" name="informacion"> Deseo recibir información
+          </label>
+          <label>
+            <input type="radio" name="edad" value="18-25" />18 a 25 años
+            <input type="radio" name="edad" value="25-55" />25 a 55 años
+            <input type="radio" name="edad" value="+55" />+ de 55 años
+          </label>
+          <button type="submit">Enviar</button>
+        </form> 
       </div>
     </div>
   </div>

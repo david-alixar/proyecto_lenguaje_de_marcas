@@ -3,49 +3,47 @@
 
 /// Estilos generales para el menú
 /// @group menú
-
 nav {
-  margin-top: 2rem;
-  padding: 0.5rem !important;
-  height: min-content;
+  @include margen-arb(2, rem);
+  @include padding(0.5rem !important);
+  @include altura(min-content);
   @include border-radius($border-radius-menu);
   @include anchura(15);
   @include color-fondo($fondo-color-menu);
 
-/// Estilos para las las listas dentro del menú
-/// @group menú
+  /// Estilos para las las listas dentro del menú
+  /// @group menú
   ul {
-    @include padding(0);
+    @include padding(0rem);
+
     & li {
-      @include padding(0.7);
-      @include padding-izq(0,rem);
+      @include padding(0.7rem);
+      @include padding-izq(0, rem);
       @include display(block);
       @include posicion(relative);
-
       @include cambiar_color($color-hover-menu);
       @include texto-responsivo(1.5);
+
       & ul {
-        @include display(none);        
+        @include display(none);
       }
 
-/// Para las transparencias al pasar el ratón
-/// @group menú
-      &:hover > ul {
+      &:hover>ul {
         @include display(block);
         @include posicion(absolute);
-          left: 80%;
-          @include color-fondo(transparentize(lighten($fondo-color-menu,45%),0.7));
+        @include izq(80%);
+        @include color-fondo(transparentize(lighten($fondo-color-menu, 45%), 0.7));
 
-          li {
-              @include anchura(100);
-              @include padding(0.5);
-          }
+        li {
+          @include anchura(100);
+          @include padding(0.5rem);
+        }
 
-          li:hover {
-            @include cambiar_color($color-texto-menu);
-            @include color-fondo(transparentize(lighten($fondo-color-menu,40%),0.2));
-          }
-          
+        li:hover {
+          @include cambiar_color($color-texto-menu);
+          @include color-fondo(transparentize(lighten($fondo-color-menu, 40%), 0.2));
+        }
+
       }
 
       &.active,

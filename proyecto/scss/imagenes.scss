@@ -6,32 +6,12 @@
 img {
     @include anchura(100);
     @include border-radius($border-radius-imagenes);
-    @include borde(2,$color-borde-imagenes);
-  
+    @include borde(2, solid, $color-borde-imagenes);
+    @include altura(125px);
 }
 
-figure.card {
-    @include borde(1,$color-texto);
-    @include border-radius($border-radius-imagenes);
-    @include display(inline-block);
-    @include padding(1);
-    margin-block-start: 0;
-    margin-block-end: 0;
-    margin-inline-start: 0;
-    margin-inline-end: 0;
-
-     img {
-        @include border-radius($border-radius-imagenes);
-        @include anchura(100);
-     }
-
-     figcaption {
-         @include margen(0.5);
-         @include texto(0.9);
-         @include centrado;
-     }
-}
-
+/// Efecto para agrandar las imágenes al pasar el ratón
+/// @group imágenes
 img:hover {
     @include duracion(1);
     @include escalar(1.5);

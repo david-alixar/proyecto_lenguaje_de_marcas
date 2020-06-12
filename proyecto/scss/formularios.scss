@@ -1,21 +1,89 @@
 //// @access public
 //// @author David Gonzalez
 
+/***** FORMULARIOS INLINE *****/
+
+/// Estilos generales para formularios inline
+/// @group formularios
+.form-inline {
+  @include forms-inline;
+  @include texto(1);
+  @include tipo_letra($estilo-letra-formularios);
+}
+
+/// Estilos para las etiquetas de los formularios inline
+/// @group formularios
+.form-inline label {
+  @include margen(5px 10px 5px 0);
+  @include texto(1);
+  @include display(inline-block !important);
+}
+
+/// Estilos para los input formularios inline
+/// @group formularios
+.form-inline input {
+  @include alin-vert(middle);
+  @include margen(5px 10px 5px 0);
+  @include padding(10px);
+  @include color-fondo($color-fondo-input-formularios-inline);
+  @include borde(1, solid, $color-borde-formularios);
+}
+
+/// Estilos para los botones de los formularios inline
+/// @group formularios
+.form-inline button {
+  @include padding(10px 20px);
+  @include color-fondo($color-fondo-boton-formularios-inline);
+  @include borde(1, solid, $color-borde-formularios);
+  @include cambiar_color($color-letra-boton-formularios-inline);
+  @include centrado;
+  @include text-decoration(none);
+  @include border-radius($border-radius-formularios);
+
+  &:hover {
+    @include color-fondo($color-fondo-boton-hover-formularios-inline);
+  }
+
+  &:active {    
+    @include cambiar_color($boton-formulario-activo);
+    
+  }
+
+  &:visited {
+    @include cambiar_color($boton-formulario-visitado);
+  }
+}
+
+/// Breakpoint para que los formularios inline se pongan en modo columna en pantallas pequeñas
+/// @group formularios
+@media (max-width: #{$minimo-tam-formularios}) {
+  .form-inline input {
+    @include margen(10px 0);
+  }
+
+  .form-inline {
+    @include formularios-peq;
+  }
+}
+
+
+/***** FORMULARIOS NORMALES *****/
+
+
 /// Estilos generales para formularios
 /// @group formularios
 form {
-    @include anchura($anchura-formularios);
-    @include cambiar_color($color-texto-formularios);
-    @include padding(1);
+  @include anchura($anchura-formularios);
+  @include cambiar_color($color-texto-formularios);
+  @include padding(1rem);
 }
-
 
 /// Estilos para los diferentes tipos de campo del formulario
 /// @group formularios
 input, select,  textarea, button {
-    @include display(block);
+    @include display(inline-block);
     @include anchura($anchura-formularios);
-    margin-bottom: 1rem;
+    @include margen-abj(1rem);
     @include color-fondo($fondo-formularios);
 }
 
@@ -51,7 +119,7 @@ $btn-colors: (
   @include centrado;
   @include text-decoration(none);
   @include border-radius($border-radius-formularios);
-  @include padding(0.5);
+  @include padding(0.5rem);
 
   &:hover {
     box-shadow: $border-radius-formularios/2 $border-radius-formularios/2 $color-shadow !important;    
@@ -67,12 +135,12 @@ $btn-colors: (
   }
 }
 
-/// Para dar color
+/// Para dar estilos a las letras de los botones
 /// @group formularios
-@each $k, $v in $btn-colors {
-  .btn-#{$k} {
-    @include color-fondo($v);
+@each $l, $m in $btn-colors {
+  .btn-#{$l} {
+    @include color-fondo($m);
     @include cambiar_color($color-texto-botones);
-    @include grosor-letra(bolder);;
+    @include grosor-letra(bolder);
   }
 }

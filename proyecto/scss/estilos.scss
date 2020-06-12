@@ -3,29 +3,30 @@
 
 
 /// Importante para que me cuente los bordes de las cajas
+/// @group estilos-generales
 * {
-    box-sizing: border-box;
+    @include box-sizing;
 }
 
-/// Estilos para el body
+/// Estilos para el body, incluyendo un degradado del fondo
+/// @group estilos-generales
 body {
-    @include margen(0);
-    @include tipo_letra($estilo-letra); /// NO SE ESTÁ USANDO
-    @include cambiar_color($color-texto); /// NO SE ESTÁ USANDO
+    @include margen(0px);
+    @include tipo_letra($estilo-letra); 
+    @include cambiar_color($color-texto); 
     @include texto-responsivo(2); 
-    @include degradado( /// efecto degradado de color en el fondo
-    $color-fondo-inicio, /// el color por el que empieza el degradado
-    $color-fondo-final /// el color por el que termina el degradado
+    @include degradado( 
+    $color-fondo-inicio, 
+    $color-fondo-final 
     );
 }
 
-/// Estilos para los títulos
+/// Bucle para generar los estilos de los títulos
+/// @group estilos-generales
 @for $i from 1 through 6  {
     h#{$i} {
-        @include tipo_letra($letra-titulos); /// la tipografía
-        @include cambiar_color($color-titulos); /// el color de la letra
-        @include centrar; /// para centrar el título
+        @include tipo_letra($letra-titulos); 
+        @include cambiar_color($color-titulos); 
+        @include centrar; 
     }
 }
-
-

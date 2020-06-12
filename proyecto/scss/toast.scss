@@ -1,36 +1,45 @@
+//// @access public
+//// @author David Gonzalez
+
+/// Estilos generales para los toasts
+/// @group toast
 div.toast{
-  visibility: hidden; 
-  min-width: 250px; 
-  margin-left: -125px;
-  left: 40%; 
-  bottom: 50px;  
+  @include visibilidad(hidden); 
+  @include anchura-minima(250px); 
+  @include margen-izq(-125,px);
+  @include izq(40%);
+  @include abj(50px);  
   @include color-fondo($fondo-toast);
   @include cambiar_color($color-x-toast);
   @include centrar;
   @include border-radius(2);
-  @include padding(1.5);
+  @include padding(1.5rem);
   @include posicion(fixed);
 }
 
+/// Estilos para el icono del toast
+/// @group toast
 #icono_i {
     @include texto(4);
     @include cambiar_color($color-icono);
     @include centrar;
 }
 
+/// Estilos para darle visibilidad al toast
+/// @group toast
 div.toast.show {
-    visibility: visible;
-    -webkit-animation: fadein 0.5s;
-    animation: fadein 0.5s;
+    @include visibilidad(visible);
 }
 
+/// Estilos con los que se muestra el toast
+/// @group toast
 @keyframes fadein {
     from {
-        bottom: 0;
-        opacity: 0;
+        @include abj(0);
+        @include opacidad(0);
     }
     to {
-        bottom: 30px;
-        opacity: 1;
+        @include abj(30px);
+        @include opacidad(1);
     }
 }

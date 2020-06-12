@@ -6,7 +6,6 @@
   @include flex_mixin;
 }
 
-
 /// Mapa tamaño de pantalla
 /// @group diseño
 $breakpoints: (
@@ -24,12 +23,12 @@ $breakpoints: (
   }
 }
 
-@each $k, $v in $breakpoints {
-  @media (min-width: #{$v}) {
-    /// Bucle para generar las clases de las columnas responsivas
-    /// @group diseño
+/// Bucle para generar las clases de las columnas responsivas
+/// @group diseño
+@each $l, $m in $breakpoints {
+  @media (min-width: #{$m}) {
     @for $i from 1 through $num_elementos {
-      .row > .col-#{$k+"-"+$i} {
+      .row > .col-#{$l+"-"+$i} {
         flex: 0 0 #{anchura_col($i)}+ "%";
         max-width: #{anchura_col($i)}+ "%";
       }
@@ -38,12 +37,16 @@ $breakpoints: (
 }
 
 
-
+/// Estilos para la clase row
+/// @group diseño
 .row > * {
-  @include padding(1);
+  @include padding(1rem);
 }
 
+
+/// Estilos para la clase container
+/// @group diseño
 .container {
-  max-width: $max-container-width;
   @include centrado();
+  @include anchura-maxima($anchura-maxima-contenedor);
 }

@@ -1,14 +1,14 @@
 //// @access public
 //// @author David Gonzalez
 
-/// Definimos los estilos generales para las tablas
+/// Estilos generales para las tablas
 /// @group tablas
 table {
     @include anchura(100);
-    @include padding(1);
-    border-collapse: collapse;
+    @include padding(1rem);
+    @include border-collapse(collapse);
     @include display(block);
-    overflow-x: auto;
+    @include overflow(auto);
 }
 
 /// Estilos para los títulos de las tablas
@@ -21,11 +21,11 @@ thead {
     }
 }
 
-/// Estilos para las tablas
+/// Estilos para el contenido de las tablas
 /// @group tablas
 tbody {
     tr {
-        border-bottom: 2px dotted $color-borde-tabla;
+        @include borde-inferior(2, dotted, $color-borde-tabla);
     }
 
     tr:nth-child(even) {
@@ -43,7 +43,7 @@ tbody {
     }
 
     td {
-        @include padding(0.5);
+        @include padding(0.5rem);
         @include texto($tamano-texto-tablas);
     }
 }

@@ -4,32 +4,9 @@
 /// Variables
 /// @group variables
 
-/// Tipo de letra general
-/// @group letras 
-@import url('https://fonts.googleapis.com/css?family=Bowlby+One+SC|Lato&display=swap');
-$estilo-letra: 'Bowlby One SC';
 
 
-/// Tipo de letra de los títulos
-/// @group letras
-$letra-titulos: 'Bowlby One SC', cursive;
-
-///Color de letra de los títulos
-/// @group letras
-$color-titulos: rgb(214, 154, 41); 
-
-///color de letra del texto
-/// @group letras
-$color-texto: rgb(75, 32, 2);
-
-/// Color del texto del menú
-$color-texto-menu: brown;
-
-///Tipo de letra de las listas
-/// @group letras
-$tipo-letra-listas: 'FontAwesome';
-
-
+/******            VARIABLES PARA LOS COLORES           ******/
 
 
 /// Color del texto de los formularios
@@ -45,85 +22,19 @@ $color-fondo-inicio: rgb(1, 32, 1);
 $color-fondo-final: rgb(184, 206, 184);
 
 
+/******            VARIABLES PARA DISEÑO           ******/
+
 
 /// Número de elementos máximos de ancho
 /// @group diseño
 $num_elementos: 8;
 
-
-
 /// Anchura del contenedor principal
 /// @group diseño
-$max-container-width: 95%;
-
-/// Color de fondo en los títulos de las tablas
-/// @group tablas
-$fondo-cabecera-tabla:  rgb(56, 28, 2);
-
-/// Color del texto en los títulos de las tablas
-/// @group tablas
-$color-cabecera-tabla: rgb(243, 230, 189);
-
-/// Color de fondo filas pares
-/// @group tablas
-$fondo-filas-pares-tabla:  rgb(247, 223, 192);
-
-/// Color de fondo filas impares:
-/// @group tablas
-$fondo-filas-impares-tabla: rgb(231, 206, 151);
-
-/// Color de fondo filas al pasar el ratón
-/// @group tablas
-$fondo-hover-tabla: rgb(165, 112, 68);
-
-/// Color de fondo de la tabla 
-/// @group tablas
-$color-borde-tabla: red;
-
-/// Tamaño de letra en el cuerpo de las tablas
-/// @group tablas
-$tamano-texto-tablas: 0.8;
+$anchura-maxima-contenedor: 95%;
 
 
-
-/// Border imágenes
-/// @group imágenes
-$border-radius-imagenes: 0.5rem;
-$figure-border-radius: $border-radius-imagenes;
-$color-borde-imagenes: rgb(253, 248, 238);
-
-
-
-
-/// Border radius menú
-/// @group menú
-$border-radius-menu: 0.7rem;
-
-/// Color de Inicio para el degradado del menú
-/// @group menú
-$fondo-color-menu: rgb(187, 97, 14);
-
-/// Color de texto cuando pasamos el ratón por los elementos del menú
-/// @group menú
-$color-hover-menu: #FFF;
-
-
-
-
-/// Color de fondo Toast
-/// @group toast
-$fondo-toast: rgba(51, 51, 51, 0.582);
-
-/// Color de la X Toast
-/// @group toast
-$color-x-toast: #fff;
-
-
-/// Color del icono Toast
-/// @group toast
-$color-icono: rgb(8, 8, 8);
-
-
+/******            VARIABLES PARA LOS FORMULARIOS           ******/
 
 
 /// Radio para el redondeado de los elementos de los formularios
@@ -174,6 +85,135 @@ $boton-formulario-activo: rgba(114, 28, 28, 0.562);
 /// @group formularios
 $boton-formulario-visitado: rgba(48, 114, 28, 0.562);
 
+/// Color borde formularios
+/// @group formularios
+$color-borde-formularios: rgb(129, 126, 126);
+
+/// Mínimo para ajustar los formularios inline
+/// @group formularios
+$minimo-tam-formularios: 750px;
+
+/// Color de fondo input formularios inline
+/// @group formularios
+$color-fondo-input-formularios-inline: rgb(231, 216, 216);
+
+/// Color de fondo botón formularios inline
+/// @group formularios
+$color-fondo-boton-formularios-inline: dodgerblue;
+
+/// Color letra botón formularios inline
+/// @group formularios
+$color-letra-boton-formularios-inline: white;
+
+/// Color de fondo botón formularios inline hover
+/// @group formularios
+$color-fondo-boton-hover-formularios-inline: royalblue;
 
 
+/******            VARIABLES PARA LAS IMÁGENES           ******/
+
+
+/// Border imágenes
+/// @group imágenes
+$border-radius-imagenes: 0.5rem;
+$figure-border-radius: $border-radius-imagenes;
+$color-borde-imagenes: rgb(253, 248, 238);
+
+
+/******            VARIABLES PARA LAS LETRAS          ******/
+
+
+/// Tipo de letra general
+/// @group letras 
+@import url('https://fonts.googleapis.com/css?family=Bowlby+One+SC|Lato&display=swap');
+$estilo-letra: 'Bowlby One SC';
+
+/// Tipo de letra para los formularios
+/// @group letras
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap|Handlee&display=swap');
+$estilo-letra-formularios: 'Indie Flower';
+
+/// Tipo de letra de los títulos
+/// @group letras
+$letra-titulos: 'Handlee';
+
+///Color de letra de los títulos
+/// @group letras
+$color-titulos: rgb(214, 154, 41); 
+
+///color de letra del texto
+/// @group letras
+$color-texto: rgb(75, 32, 2);
+
+/// Color del texto del menú
+/// @group letras
+$color-texto-menu: brown;
+
+///Tipo de fuente de las listas
+/// @group letras
+$icono-listas: 'FontAwesome';
+
+
+/******            VARIABLES PARA EL MENÚ           ******/
+
+
+/// Border radius menú
+/// @group menú
+$border-radius-menu: 0.7rem;
+
+/// Color de Inicio para el degradado del menú
+/// @group menú
+$fondo-color-menu: rgb(187, 97, 14);
+
+/// Color de texto cuando pasamos el ratón por los elementos del menú
+/// @group menú
+$color-hover-menu: #FFF;
+
+
+/******            VARIABLES PARA LAS TABLAS           ******/
+
+
+/// Color de fondo en los títulos de las tablas
+/// @group tablas
+$fondo-cabecera-tabla:  rgb(56, 28, 2);
+
+/// Color del texto en los títulos de las tablas
+/// @group tablas
+$color-cabecera-tabla: rgb(243, 230, 189);
+
+/// Color de fondo filas pares
+/// @group tablas
+$fondo-filas-pares-tabla:  rgb(247, 223, 192);
+
+/// Color de fondo filas impares:
+/// @group tablas
+$fondo-filas-impares-tabla: rgb(231, 206, 151);
+
+/// Color de fondo filas al pasar el ratón
+/// @group tablas
+$fondo-hover-tabla: rgb(165, 112, 68);
+
+/// Color de fondo de la tabla 
+/// @group tablas
+$color-borde-tabla: red;
+
+/// Tamaño de letra en el cuerpo de las tablas
+/// @group tablas
+$tamano-texto-tablas: 0.8;
+
+
+/******            VARIABLES PARA LOS TOAST           ******/
+
+
+/// Color de fondo Toast
+/// @group toast
+$fondo-toast: rgba(51, 51, 51, 0.582);
+
+/// Color de la X Toast
+/// @group toast
+$color-x-toast: #fff;
+
+/// Color del icono Toast
+/// @group toast
+$color-icono: rgb(8, 8, 8);
 
